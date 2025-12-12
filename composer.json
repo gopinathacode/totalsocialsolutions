@@ -1,0 +1,134 @@
+{
+  "name": "aranasoft/bedrock",
+  "type": "project",
+  "license": "proprietary",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "keywords": [
+    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/aranasoft/bedrock/issues"
+  },
+  "repositories": [
+  {
+    "type": "composer",
+    "url": "https://wpackagist.org",
+    "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+  },
+  {
+    "type": "composer",
+    "url": "https://connect.advancedcustomfields.com"
+  },
+  {
+    "type": "path",
+    "url": "web/app/plugins/revslider",
+    "options": { "symlink": false }
+  },
+    {
+    "type": "path",
+    "url": "web/app/plugins/wordpress-seo-premium",
+    "options": { "symlink": false }
+  },
+  {
+    "type": "path",
+    "url": "web/app/plugins/custom-setting",
+    "options": { "symlink": false }
+  }
+],
+
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "^2.2",
+    "oscarotero/env": "^2.1",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/bedrock-disallow-indexing": "^2.0",
+    "roots/wordpress": "6.8.3",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.1.0",
+    "vlucas/phpdotenv": "^5.3",
+    "wpengine/advanced-custom-fields-pro": "^6.0",
+    "local/revslider": "*",
+    "local/custom-setting": "*",
+    "local/wordpress-seo-premium":"*",
+    "wpackagist-plugin/anti-spam": "7.4.0",
+    "wpackagist-plugin/autoptimize": "3.1.14",
+    "wpackagist-plugin/better-wp-security": "9.4.3",
+    "wpackagist-plugin/breadcrumb-navxt": "7.5.0",
+    "wpackagist-plugin/bwp-minify": "1.3.3",
+    "wpackagist-plugin/classic-editor": "1.6.7",
+    "wpackagist-plugin/contact-form-7": "6.1.4",
+    "wpackagist-plugin/custom-twitter-feeds": "2.3.1",
+    "wpackagist-plugin/disable-google-fonts": "2.0",
+    "wpackagist-plugin/eps-301-redirects": "2.81",
+    "wpackagist-plugin/google-captcha": "1.85",
+    "wpackagist-plugin/jetpack": "15.3.1",
+    "wpackagist-plugin/mailchimp-for-wp": "4.10.9",
+    "wpackagist-plugin/newsletter-sign-up": "2.0.9",
+    "wpackagist-plugin/page-comments-off-please": "2.0.4",
+    "wpackagist-plugin/php-compatibility-checker": "1.6.3",
+    "wpackagist-plugin/simple-custom-post-order": "2.5.11",
+    "wpackagist-plugin/wordpress-importer": "0.9.5",
+    "wpackagist-plugin/wordpress-seo": "26.5",
+    "wpackagist-plugin/wp-migrate-db": "2.7.7"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.6.0",
+    "roave/security-advisories": "dev-latest"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "roots/wordpress-core-installer": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+     "post-install-cmd": [
+      "php -r \"unlink('./web/wp/wp-content/plugins/hello.php');\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyten';       \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyeleven';    \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentytwelve';    \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentythirteen';  \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyfourteen';  \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyfifteen';   \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentysixteen';   \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyseventeen'; \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentynineteen';  \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentytwenty';    \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentytwentyone'; \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\""
+    ],
+    "post-update-cmd": [
+      "php -r \"unlink('./web/wp/wp-content/plugins/hello.php');\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyten';       \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyeleven';    \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentytwelve';    \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentythirteen';  \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyfourteen';  \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyfifteen';   \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentysixteen';   \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentyseventeen'; \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentynineteen';  \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentytwenty';    \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\"",
+      "php -r \"\\$dirname = './web/wp/wp-content/themes/twentytwentyone'; \ntry{\n\\$dir=new RecursiveDirectoryIterator(\\$dirname, FilesystemIterator::SKIP_DOTS);\narray_map('unlink',array_keys(iterator_to_array(new RecursiveIteratorIterator(\\$dir))));\narray_map('rmdir',array_keys(iterator_to_array(new RecursiveIteratorIterator(new ParentIterator(\\$dir), RecursiveIteratorIterator::CHILD_FIRST))));\nrmdir(\\$dirname);\n}\ncatch(Exception \\$ex){\nprint('Unable to delete'.PHP_EOL);\n}\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

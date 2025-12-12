@@ -1,0 +1,12 @@
+.pipelines
+.dockerignore
+.git/
+.gitignore
+!.env
+Dockerfile
+docker-compose.*
+/logs
+composer.*
+wp-cli.yml
+README.md
+phpcs.xml

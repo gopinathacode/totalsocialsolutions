@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://cns72.com/mercerculinary/wp-content/themes/mercerculinary/TimThumb"
+        }
+    ],
+    "require": {
+        "gabrielgil/timthumb": "2.*"
+    }
+}
