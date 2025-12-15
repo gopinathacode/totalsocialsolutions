@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e69265e7742ea5c9cc1b5847f30fa9ba",
+    "content-hash": "6c2e1ea626a93a45b3dcc8b72d81ec9a",
     "packages": [
         {
             "name": "composer/installers",
@@ -220,10 +220,13 @@
             "dist": {
                 "type": "path",
                 "url": "web/app/plugins/custom-setting",
-                "reference": "5a941e9e0b9d7fc89358d27cf71ac96e1b188d51"
+                "reference": "fdc2c9d291ad9d4b592388cabdd0deedfbf1c6d7"
             },
             "type": "wordpress-plugin",
-            "description": "Custom Setting WordPress plugin",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Custom Setting plugin",
             "transport-options": {
                 "symlink": false,
                 "relative": true
@@ -235,10 +238,13 @@
             "dist": {
                 "type": "path",
                 "url": "web/app/plugins/revslider",
-                "reference": "39fb81d9a5d0d66e4601fcb953d95e87b1f1e076"
+                "reference": "9be1aaad2b405633703a8f28d279e0b9a57be5b6"
             },
             "type": "wordpress-plugin",
-            "description": "RevSlider WordPress plugin",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Slider Revolution - Premium responsive slider",
             "transport-options": {
                 "symlink": false,
                 "relative": true
@@ -250,10 +256,13 @@
             "dist": {
                 "type": "path",
                 "url": "web/app/plugins/wordpress-seo-premium",
-                "reference": "223225a36bbcb560ae980a107fde1cf7ba6b480f"
+                "reference": "7aabdcb474ec5280e9f61ecda72d548927b280b8"
             },
             "type": "wordpress-plugin",
-            "description": "wordpress-seo-premium",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "description": "Yoast SEO Premium",
             "transport-options": {
                 "symlink": false,
                 "relative": true
@@ -525,7 +534,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.8.3",
+            "version": "6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -556,7 +565,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.8.3"
+                "source": "https://github.com/roots/wordpress/tree/6.9"
             },
             "funding": [
                 {
@@ -635,23 +644,23 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.8.3",
+            "version": "6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.8.3"
+                "reference": "6.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.8.3-no-content.zip",
-                "reference": "6.8.3",
-                "shasum": "2c34ba506afd8061d96cde50b2c92f109c10d2c8"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.9-no-content.zip",
+                "reference": "6.9",
+                "shasum": "2d8cb4b253b690e255afde1d451e87380e6a5cb5"
             },
             "require": {
                 "php": ">= 7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.8.3"
+                "wordpress/core-implementation": "6.9"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -702,7 +711,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2025-09-30T18:16:31+00:00"
+            "time": "2025-12-02T19:09:36+00:00"
         },
         {
             "name": "roots/wp-config",
@@ -1528,10 +1537,10 @@
         },
         {
             "name": "wpengine/advanced-custom-fields-pro",
-            "version": "6.7.0",
+            "version": "6.7.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=pro&t=6.7.0"
+                "url": "https://connect.advancedcustomfields.com/v2/plugins/composer_download?s=composer&p=pro&t=6.7.0.2"
             },
             "require": {
                 "composer/installers": "~1.0 || ~2.0"
@@ -1550,12 +1559,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "eeebba0043eaddd36fd8747cc144b9b661d9b392"
+                "reference": "1553067758ae7f3df13df7c7e232c62d928e1d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/eeebba0043eaddd36fd8747cc144b9b661d9b392",
-                "reference": "eeebba0043eaddd36fd8747cc144b9b661d9b392",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1553067758ae7f3df13df7c7e232c62d928e1d23",
+                "reference": "1553067758ae7f3df13df7c7e232c62d928e1d23",
                 "shasum": ""
             },
             "conflict": {
@@ -1608,7 +1617,7 @@
                 "automattic/jetpack": "<9.8",
                 "awesome-support/awesome-support": "<=6.0.7",
                 "aws/aws-sdk-php": "<3.288.1",
-                "azuracast/azuracast": "<0.18.3",
+                "azuracast/azuracast": "<=0.23.1",
                 "b13/seo_basics": "<0.8.2",
                 "backdrop/backdrop": "<=1.32",
                 "backpack/crud": "<3.4.9",
@@ -1807,6 +1816,7 @@
                 "feehi/feehicms": "<=2.1.1",
                 "fenom/fenom": "<=2.12.1",
                 "filament/actions": ">=3.2,<3.2.123",
+                "filament/filament": ">=4,<4.3.1",
                 "filament/infolists": ">=3,<3.2.115",
                 "filament/tables": ">=3,<3.2.115",
                 "filegator/filegator": "<7.8",
@@ -1825,6 +1835,7 @@
                 "floriangaerber/magnesium": "<0.3.1",
                 "fluidtypo3/vhs": "<5.1.1",
                 "fof/byobu": ">=0.3.0.0-beta2,<1.1.7",
+                "fof/pretty-mail": "<=1.1.2",
                 "fof/upload": "<1.2.3",
                 "foodcoopshop/foodcoopshop": ">=3.2,<3.6.1",
                 "fooman/tcpdf": "<6.2.22",
@@ -1888,7 +1899,7 @@
                 "ibexa/http-cache": ">=4.6,<4.6.14",
                 "ibexa/post-install": "<1.0.16|>=4.6,<4.6.14",
                 "ibexa/solr": ">=4.5,<4.5.4",
-                "ibexa/user": ">=4,<4.4.3|>=5,<5.0.3",
+                "ibexa/user": ">=4,<4.4.3|>=5,<5.0.4",
                 "icecoder/icecoder": "<=8.1",
                 "idno/known": "<=1.3.1",
                 "ilicmiljan/secure-props": ">=1.2,<1.2.2",
@@ -2025,6 +2036,7 @@
                 "microsoft/microsoft-graph-core": "<2.0.2",
                 "microweber/microweber": "<=2.0.19",
                 "mikehaertl/php-shellcommand": "<1.6.1",
+                "mineadmin/mineadmin": "<=3.0.9",
                 "miniorange/miniorange-saml": "<1.4.3",
                 "mittwald/typo3_forum": "<1.2.1",
                 "mobiledetect/mobiledetectlib": "<2.8.32",
@@ -2061,6 +2073,7 @@
                 "netgen/tagsbundle": ">=3.4,<3.4.11|>=4,<4.0.15",
                 "nette/application": ">=2,<2.0.19|>=2.1,<2.1.13|>=2.2,<2.2.10|>=2.3,<2.3.14|>=2.4,<2.4.16|>=3,<3.0.6",
                 "nette/nette": ">=2,<2.0.19|>=2.1,<2.1.13",
+                "neuron-core/neuron-ai": "<=2.8.11",
                 "nilsteampassnet/teampass": "<3.1.3.1-dev",
                 "nitsan/ns-backup": "<13.0.1",
                 "nonfiction/nterchange": "<4.1.1",
@@ -2080,7 +2093,7 @@
                 "october/system": "<3.7.5",
                 "oliverklee/phpunit": "<3.5.15",
                 "omeka/omeka-s": "<4.0.3",
-                "onelogin/php-saml": "<2.10.4",
+                "onelogin/php-saml": "<2.21.1|>=3,<3.8.1|>=4,<4.3.1",
                 "oneup/uploader-bundle": ">=1,<1.9.3|>=2,<2.1.5",
                 "open-web-analytics/open-web-analytics": "<1.8.1",
                 "opencart/opencart": ">=0",
@@ -2214,8 +2227,8 @@
                 "shopware/core": "<6.6.10.9-dev|>=6.7,<6.7.4.1-dev",
                 "shopware/platform": "<6.6.10.7-dev|>=6.7,<6.7.3.1-dev",
                 "shopware/production": "<=6.3.5.2",
-                "shopware/shopware": "<=5.7.17|>=6.7,<6.7.2.1-dev",
-                "shopware/storefront": "<=6.4.8.1|>=6.5.8,<6.5.8.7-dev",
+                "shopware/shopware": "<=5.7.17|>=6.4.6,<6.6.10.10-dev|>=6.7,<6.7.5.1-dev",
+                "shopware/storefront": "<6.6.10.10-dev|>=6.7,<6.7.5.1-dev",
                 "shopxo/shopxo": "<=6.4",
                 "showdoc/showdoc": "<2.10.4",
                 "shuchkin/simplexlsx": ">=1.0.12,<1.1.13",
@@ -2542,7 +2555,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-08T23:05:37+00:00"
+            "time": "2025-12-12T23:06:01+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -2634,6 +2647,6 @@
     "platform": {
         "php": ">=7.4"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }
