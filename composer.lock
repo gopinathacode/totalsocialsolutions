@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c2e1ea626a93a45b3dcc8b72d81ec9a",
+    "content-hash": "4d83dd46a788e2875a214562eba128b5",
     "packages": [
         {
             "name": "composer/installers",
@@ -1339,15 +1339,15 @@
         },
         {
             "name": "wpackagist-plugin/eps-301-redirects",
-            "version": "2.81",
+            "version": "2.82",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/eps-301-redirects/",
-                "reference": "tags/2.81"
+                "reference": "tags/2.82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/eps-301-redirects.2.81.zip"
+                "url": "https://downloads.wordpress.org/plugin/eps-301-redirects.2.82.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2648,5 +2648,5 @@
         "php": ">=7.4"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
